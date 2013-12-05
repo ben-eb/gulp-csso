@@ -1,0 +1,25 @@
+{
+  "name": "gulp-csso",
+  "version": "0.1.0",
+  "description": "Run csso with gulp.",
+  "license": "MIT",
+  "homepage": "https://github.com/ben-eb/gulp-csso",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "therealbenbriggs@hotmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ben-eb/gulp-csso.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "css"
+  ],
+  "dependencies": {
+    "csso": "~1.3.10",
+    "event-stream": "~3.0.15"
+  },
+  "main": "index.js"
+}
