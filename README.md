@@ -1,6 +1,6 @@
 # gulp-csso
 
-Run [https://github.com/css/csso](csso) with Gulp, the streaming build system.
+Run [https://npmjs.org/package/csso](csso) with Gulp, the streaming build system.
 
 ## Installation
 
