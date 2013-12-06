@@ -1,6 +1,6 @@
 {
   "name": "gulp-csso",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Run csso with gulp.",
   "license": "MIT",
   "homepage": "https://github.com/ben-eb/gulp-csso",
