@@ -1,13 +1,16 @@
 {
   "name": "gulp-csso",
   "version": "0.1.1",
-  "description": "Run csso with gulp.",
+  "description": "Minify CSS with CSSO.",
   "license": "MIT",
   "homepage": "https://github.com/ben-eb/gulp-csso",
   "author": {
     "name": "Ben Briggs",
     "email": "therealbenbriggs@hotmail.com",
     "url": "http://beneb.info"
+  },
+  "scripts": {
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,11 @@
   "dependencies": {
     "csso": "~1.3.10",
     "event-stream": "~3.0.15"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "gulp-util": "~2.1.3",
+    "mocha": "~1.15.1"
   },
   "main": "index.js"
 }
