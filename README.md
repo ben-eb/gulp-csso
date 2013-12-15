@@ -1,12 +1,12 @@
-# gulp-csso
+# [gulp](https://github.com/wearefractal/gulp)-csso
 
-Run csso with Gulp, the streaming build system.
+[![Build Status](https://travis-ci.org/ben-eb/gulp-csso.png?branch=master)](https://travis-ci.org/ben-eb/gulp-csso) [![NPM version](https://badge.fury.io/js/gulp-csso.png)](http://badge.fury.io/js/gulp-csso) [![Dependency Status](https://gemnasium.com/ben-eb/gulp-csso.png)](https://gemnasium.com/ben-eb/gulp-csso)
 
-https://npmjs.org/package/csso
+> Minify CSS with [CSSO](https://npmjs.org/package/csso).
 
 ## Installation
 
-Install via npm:
+Install via [npm](https://npmjs.org/package/gulp-csso):
 
 ```
 npm install gulp-csso --save-dev
