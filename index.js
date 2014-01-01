@@ -2,7 +2,7 @@
 
 'use strict';
 
-var map  = require('event-stream').map,
+var map  = require('map-stream'),
     csso = require('csso');
 
 module.exports = function() {
