@@ -1,6 +1,6 @@
 {
   "name": "gulp-csso",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Minify CSS with CSSO.",
   "license": "MIT",
   "homepage": "https://github.com/ben-eb/gulp-csso",
