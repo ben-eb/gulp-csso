@@ -1,5 +1,5 @@
 /* jshint node: true */
-/* global describe, it, before, beforeEach, after, afterEach */
+/* global describe, it */
 
 'use strict';
 
@@ -14,24 +14,24 @@ var basestyle  = 'h1 { color: yellow; } \n h1 { font-size: 2em; }',
 describe('gulp-csso', function() {
     it('should minify css with csso, performing structural optimisation', function (cb) {
         var stream = csso();
-    
+
         stream.on('data', function(data) {
-           expect(String(data.contents)).to.equal(optimalmin);
-           cb();
+            expect(String(data.contents)).to.equal(optimalmin);
+            cb();
         });
-    
+
         stream.write(new gutil.File({
             contents: basestyle
         }));
     });
     it('should minify css with csso, with no structural optimisation', function (cb) {
         var stream = csso(true);
-    
+
         stream.on('data', function(data) {
-           expect(String(data.contents)).to.equal(nonoptimal);
-           cb();
+            expect(String(data.contents)).to.equal(nonoptimal);
+            cb();
         });
-    
+
         stream.write(new gutil.File({
             contents: basestyle
         }));
