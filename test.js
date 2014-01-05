@@ -21,7 +21,7 @@ describe('gulp-csso', function() {
         });
 
         stream.write(new gutil.File({
-            contents: basestyle
+            contents: new Buffer(basestyle)
         }));
     });
     it('should minify css with csso, with no structural optimisation', function (cb) {
@@ -33,7 +33,7 @@ describe('gulp-csso', function() {
         });
 
         stream.write(new gutil.File({
-            contents: basestyle
+            contents: new Buffer(basestyle)
         }));
     });
 });
