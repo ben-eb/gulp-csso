@@ -21,7 +21,6 @@ function cssoTransform(optimise) {
 }
 
 function gulpcsso(optimise) {
-    var optimise = arguments[0];
     var stream = new transform({ objectMode: true });
 
     stream._transform = function(file, unused, done) {
@@ -48,16 +47,5 @@ function gulpcsso(optimise) {
 }
 
 gulpcsso.cssoTransform = cssoTransform;
-
 module.exports = gulpcsso;
 
-/*
-module.exports = function() {
-    // Use csso(true) to turn structure minimization off.
-    var optimise = (arguments.length > 0) ? arguments[0] : false;
-    return map(function(file, cb) {
-        file.contents = new Buffer(csso.justDoIt(String(file.contents), optimise));
-        cb(null, file);
-    });
-};
-*/
