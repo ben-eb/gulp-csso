@@ -2,12 +2,12 @@
 
 'use strict';
 
-var map  = require('map-stream'),
-    csso = require('csso'),
-    transform = require('stream').Transform,
-    bufferstreams = require('bufferstreams'),
-    gutil = require ('gulp-util');
-var PLUGIN_NAME = 'gulp-csso';
+var csso            = require('csso'),
+    gutil           = require('gulp-util'),
+    transform       = require('stream').Transform,
+    bufferstreams   = require('bufferstreams'),
+
+    PLUGIN_NAME     = 'gulp-csso';
 
 function cssoTransform(optimise) {
     // Returns a callback that handles the buffered content
@@ -48,4 +48,3 @@ function gulpcsso(optimise) {
 
 gulpcsso.cssoTransform = cssoTransform;
 module.exports = gulpcsso;
-
