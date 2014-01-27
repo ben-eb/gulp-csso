@@ -23,4 +23,12 @@ gulp.task('default', function() {
 });
 ```
 
-Optionally, pass `true` to the task (`pipe(csso(true))`) to turn structure minimization off.
+## API
+
+### csso(false) *or* csso()
+
+The default is to use structure minimization for maximum compression.
+
+### csso(true)
+
+Pass true instead if you want to disable this feature.
