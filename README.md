@@ -2,6 +2,8 @@
 
 > Minify CSS with [CSSO](https://npmjs.org/package/csso).
 
+*If you have any difficulties with the output of this plugin, please use the [CSSO tracker](https://github.com/css/csso/issues).*
+
 ## Installation
 
 Install via [npm](https://npmjs.org/package/gulp-csso):
@@ -17,7 +19,7 @@ var gulp = require('gulp');
 var csso = require('gulp-csso');
 
 gulp.task('default', function() {
-    gulp.src('./main.css')
+    return gulp.src('./main.css')
         .pipe(csso())
         .pipe(gulp.dest('./out'));
 });
@@ -27,7 +29,7 @@ gulp.task('default', function() {
 
 ### csso(false) *or* csso()
 
-The default is to use structure minimization for maximum compression.
+The default is to use structure minimization for maximum compression. See [the CSSO description](http://bem.info/tools/optimizers/csso/description/) for more information.
 
 ### csso(true)
 
