@@ -14,7 +14,7 @@ npm install gulp-csso --save-dev
 
 ## Example
 
-```
+```js
 var gulp = require('gulp');
 var csso = require('gulp-csso');
 
