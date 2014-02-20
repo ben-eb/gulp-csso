@@ -13,7 +13,7 @@ function cssoTransform(optimise) {
     // Returns a callback that handles the buffered content
     return function(err, buffer, cb) {
         if (err) {
-            cb(gutil.PluginError(PLUGIN_NAME, err));
+            cb(new gutil.PluginError(PLUGIN_NAME, err));
         }
         var optimised = csso.justDoIt(String(buffer), optimise);
         cb(null, new Buffer(optimised));
