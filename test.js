@@ -39,40 +39,20 @@ describe('gulp-csso', function() {
         }));
     });
 
-    it('should work the same in stream mode', function(cb) {
+    it('in stream mode must emit an error', function(cb) {
         var stream = csso();
         var fakeFile = new gutil.File({
             contents: new Stream()
         });
 
-        stream.on('data', function(data) {
-            data.contents.pipe(es.wait(function(err, data) {
-                expect(data).to.equal(optimalmin);
-                cb();
-            }));
-        });
+        var doWrite = function() {
+            stream.write(fakeFile);
+            fakeFile.contents.write(basestyle);
+            fakeFile.contents.end();
+        };
 
-        stream.write(fakeFile);
-        fakeFile.contents.write(basestyle);
-        fakeFile.contents.end();
-    });
-
-    it('should work the same in stream mode, with no structural optimisation', function(cb) {
-        var stream = csso(true);
-        var fakeFile = new gutil.File({
-            contents: new Stream()
-        });
-
-        stream.on('data', function(data) {
-            data.contents.pipe(es.wait(function(err, data) {
-                expect(data).to.equal(nonoptimal);
-                cb();
-            }));
-        });
-
-        stream.write(fakeFile);
-        fakeFile.contents.write(basestyle);
-        fakeFile.contents.end();
+        expect(doWrite).to.throw(/Streaming not supported/);
+        cb();
     });
 
     it('should let null files pass through', function(cb) {
