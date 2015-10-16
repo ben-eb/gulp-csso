@@ -27,7 +27,7 @@ describe('gulp-csso', function() {
     });
 
     it('should minify css with csso, with no structural optimisation', function(cb) {
-        var stream = csso(true);
+        var stream = csso({ restructuring: false });
 
         stream.on('data', function(data) {
             expect(String(data.contents)).to.equal(nonoptimal);
