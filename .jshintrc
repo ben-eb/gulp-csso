@@ -10,5 +10,6 @@
     "noarg": true,
     "noempty": true,
     "unused": true,
-    "indent": 4
+    "indent": 4,
+    "node": true
 }

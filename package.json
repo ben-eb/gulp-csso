@@ -3,35 +3,32 @@
   "version": "1.0.0",
   "description": "Minify CSS with CSSO.",
   "license": "MIT",
+  "files": [
+    "index.js",
+    "LICENSE-MIT"
+  ],
   "homepage": "https://github.com/ben-eb/gulp-csso",
   "author": {
     "name": "Ben Briggs",
-    "email": "therealbenbriggs@hotmail.com",
+    "email": "beneb.info@gmail.com",
     "url": "http://beneb.info"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "tape test.js | tap-spec"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ben-eb/gulp-csso.git"
-  },
+  "repository": "ben-eb/gulp-csso",
   "keywords": [
     "gulpplugin",
     "minify",
     "css"
   ],
   "dependencies": {
-    "csso": "~1.4.0",
-    "gulp-util": "~3.0.2"
+    "csso": "^1.4.0",
+    "gulp-util": "^3.0.6"
   },
   "devDependencies": {
-    "chai": "~1.10.0",
-    "event-stream": "~3.2.1",
-    "gulp": "~3.8.10",
-    "gulp-jshint": "~1.9.0",
-    "jshint-stylish": "~1.0.0",
-    "mocha": "^2.1.0"
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.1"
   },
   "main": "index.js"
 }

@@ -1,33 +1,31 @@
-/* jshint node:true */
-
 'use strict';
 
-var csso            = require('csso'),
-    gutil           = require('gulp-util'),
-    transform       = require('stream').Transform,
+var csso        = require('csso'),
+    gutil       = require('gulp-util'),
+    transform   = require('stream').Transform,
 
-    PLUGIN_NAME     = 'gulp-csso';
+    PLUGIN_NAME = 'gulp-csso';
 
 module.exports = function (disableStructureMinimization) {
-    var stream = new transform({ objectMode: true });
+    var stream = new transform({objectMode: true});
 
-    stream._transform = function(file, unused, done) {
+    stream._transform = function (file, encoding, cb) {
         // Pass through if null
         if (file.isNull()) {
             stream.push(file);
-            done();
+            cb();
             return;
         }
 
         if (file.isStream()) {
-            return done(new gutil.PluginError(PLUGIN_NAME, 'Streaming not supported'));
+            return cb(new gutil.PluginError(PLUGIN_NAME, 'Streaming not supported'));
         } else {
             var optimised = csso.minify(String(file.contents), {
                 restructuring: !disableStructureMinimization
             });
             file.contents = new Buffer(optimised);
             stream.push(file);
-            done();
+            cb();
         }
     };
 

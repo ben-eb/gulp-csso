@@ -4,9 +4,9 @@
 
 *If you have any difficulties with the output of this plugin, please use the [CSSO tracker](https://github.com/css/csso/issues).*
 
-## Installation
+## Install
 
-Install via [npm](https://npmjs.org/package/gulp-csso):
+With [npm](https://npmjs.org/package/gulp-csso) do:
 
 ```
 npm install gulp-csso --save-dev
@@ -18,7 +18,7 @@ npm install gulp-csso --save-dev
 var gulp = require('gulp');
 var csso = require('gulp-csso');
 
-gulp.task('default', function() {
+gulp.task('default', function () {
     return gulp.src('./main.css')
         .pipe(csso())
         .pipe(gulp.dest('./out'));
@@ -37,4 +37,4 @@ Pull requests are welcome. If you add functionality, then please add unit tests 
 
 ## License
 
-MIT © Ben Briggs
+MIT © [Ben Briggs](http://beneb.info)
