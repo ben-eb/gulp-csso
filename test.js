@@ -1,6 +1,6 @@
 'use strict';
 
-var csso    = require('.'),
+var csso    = require('./'),
     test    = require('tape'),
     Stream  = require('stream'),
     gutil   = require('gulp-util'),
@@ -14,7 +14,7 @@ function fixture (contents) {
         contents: contents,
         cwd: __dirname,
         base: __dirname,
-        path: __dirname + '/fixture.svg'
+        path: __dirname + '/test.css'
     });
 }
 
