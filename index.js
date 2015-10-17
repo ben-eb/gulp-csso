@@ -8,7 +8,7 @@ var csso            = require('csso'),
 
     PLUGIN_NAME     = 'gulp-csso';
 
-module.exports = function (optimise) {
+module.exports = function (disableStructureMinimization) {
     var stream = new transform({ objectMode: true });
 
     stream._transform = function(file, unused, done) {
@@ -20,9 +20,11 @@ module.exports = function (optimise) {
         }
 
         if (file.isStream()) {
-            return done(new gutil.PluginError(PLUGIN_NAME, "Streaming not supported"));
+            return done(new gutil.PluginError(PLUGIN_NAME, 'Streaming not supported'));
         } else {
-            var optimised = csso.justDoIt(String(file.contents), optimise);
+            var optimised = csso.minify(String(file.contents), {
+                restructuring: !disableStructureMinimization
+            });
             file.contents = new Buffer(optimised);
             stream.push(file);
             done();

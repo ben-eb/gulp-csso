@@ -27,7 +27,7 @@ gulp.task('default', function() {
 
 ## API
 
-### csso(structureMinimization)
+### csso(disableStructureMinimization)
 
 A boolean value; the default is to use structure minimization for maximum compression, by passing false (or no parameters). See [the CSSO description](http://bem.info/tools/optimizers/csso/description/) for more information. Pass true instead if you want to disable this feature.
 
