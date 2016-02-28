@@ -23,8 +23,9 @@
     "css"
   ],
   "dependencies": {
-    "csso": "^1.4.0",
-    "gulp-util": "^3.0.6"
+    "csso": "^1.6.3",
+    "gulp-util": "^3.0.6",
+    "vinyl-sourcemaps-apply": "^0.2.1"
   },
   "devDependencies": {
     "tap-spec": "^4.1.0",

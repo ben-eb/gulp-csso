@@ -1,0 +1,8 @@
+{
+    "version": 3,
+    "sources": ["test.css"],
+    "names": [],
+    "mappings": "AAAA,E,CACI,S,CAGJ,E,CACI,U",
+    "file": "test.css",
+    "sourcesContent": [".a {\n    color: red;\n}\n\n.b {\n    color: blue;\n}"]
+}

@@ -23,13 +23,46 @@ gulp.task('default', function () {
         .pipe(csso())
         .pipe(gulp.dest('./out'));
 });
+
+gulp.task('development', function () {
+    return gulp.src('./main.css')
+        .pipe(csso({
+            restructure: false,
+            sourceMap: true,
+            debug: true
+        }))
+        .pipe(gulp.dest('./out'));
+});
 ```
 
 ## API
 
-### csso(disableStructureMinimization)
+### csso([options])
 
-A boolean value; the default is to use structure minimization for maximum compression, by passing false (or no parameters). See [the CSSO description](http://bem.info/tools/optimizers/csso/description/) for more information. Pass true instead if you want to disable this feature.
+#### options
+
+For backwards compatibility it can also be a `boolean`. In this case, the inverted value is set to `options.restructure` (e.g. `true` becomes `{restructure: false}`).
+
+##### restructure
+
+Type: `boolean`  
+Default: `true`
+
+The default is to use structure minimization for maximum compression. Pass `false` instead if you want to disable this feature.
+
+##### sourceMap
+
+Type: `boolean`  
+Default: depends on input file has a source map or not
+
+Specify to generate source map. By default source map is generating only if input file has a source map. Pass `true` to ensure source map is being generated or `false` to not.
+
+##### debug
+
+Type: `boolean`  
+Default: `false`
+
+Pass `true` or positive number (greater number for more details) to get some debug information about minification process.
 
 ## Contributing
 

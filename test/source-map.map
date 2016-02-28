@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "sources": [
+        "a.css",
+        "b.css"
+    ],
+    "names": [],
+    "mappings": "AAAA;AACA;AACA;AACA;ACHA;AACA;AACA;AACA",
+    "file": "test.css",
+    "sourcesContent": [
+        ".a {\n    color: red;\n}\n",
+        ".b {\n    color: blue;\n}\n"
+    ]
+}
