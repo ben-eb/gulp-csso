@@ -2,7 +2,8 @@
 
 > Minify CSS with [CSSO](https://www.npmjs.com/package/csso).
 
-*If you have any difficulties with the output of this plugin, please use the [CSSO tracker](https://github.com/css/csso/issues).*
+*If you have any difficulties with the output of this plugin, please use
+the [CSSO tracker](https://github.com/css/csso/issues).*
 
 ## Install
 
@@ -41,32 +42,57 @@ gulp.task('development', function () {
 
 #### options
 
-For backwards compatibility it can also be a `boolean`. In this case, the inverted value is set to `options.restructure` (e.g. `true` becomes `{restructure: false}`).
+For backwards compatibility it can also be a `boolean`. In this case, the
+inverted value is set to `options.restructure`
+(e.g. `true` becomes `{restructure: false}`).
 
 ##### restructure
 
 Type: `boolean`  
 Default: `true`
 
-The default is to use structure minimization for maximum compression. Pass `false` instead if you want to disable this feature.
+The default is to use structure minimization for maximum compression.
+Pass `false` instead if you want to disable this feature.
 
 ##### sourceMap
 
 Type: `boolean`  
 Default: depends on input file has a source map or not
 
-Specify to generate source map. By default source map is generating only if input file has a source map. Pass `true` to ensure source map is being generated or `false` to not.
+Specify this to generate source map; by default a source map is generated only
+if the input file has a source map. Pass `true` to ensure that the source map
+is generated or `false` to disable this.
+
+Alternatively, you can enable source maps support using [gulp-sourcemaps]:
+
+[gulp-sourcemaps]: https://github.com/floridoo/gulp-sourcemaps
+
+```js
+var gulp = require('gulp');
+var csso = require('gulp-csso');
+var sourcemaps = require('gulp-sourcemaps');
+
+gulp.task('default', function () {
+    return gulp.src('main.css')
+        .pipe(sourcemaps.init())
+        .pipe(csso())
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./out'));
+});
+```
 
 ##### debug
 
 Type: `boolean`  
 Default: `false`
 
-Pass `true` or positive number (greater number for more details) to get some debug information about minification process.
+Pass `true` or a positive number (greater number for more details) to get some
+debugging information about the minification process.
 
 ## Contributing
 
-Pull requests are welcome. If you add functionality, then please add unit tests to cover it.
+Pull requests are welcome. If you add functionality, then please add unit tests
+to cover it.
 
 ## License
 
