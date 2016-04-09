@@ -1,3 +1,7 @@
+# 2.0.0
+
+* Update CSSO to 2.0.0 (thanks to @lahmatiy).
+
 # 1.1.0
 
 * Adds source map support, options object support (thanks to @lahmatiy).

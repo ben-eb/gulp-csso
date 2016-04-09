@@ -92,9 +92,9 @@ debugging information about the minification process.
 ##### usage
 
 Type: `object`
-Default: null
+Default: `null`
 
-Usage data for advanced optimisations (read more in [CSSO documentation](https://github.com/css/csso#usage-data)).
+Usage data for advanced optimisations (read more in the [CSSO documentation](https://github.com/css/csso#usage-data)).
 
 ## Contributing
 
