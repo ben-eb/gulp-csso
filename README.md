@@ -89,6 +89,13 @@ Default: `false`
 Pass `true` or a positive number (greater number for more details) to get some
 debugging information about the minification process.
 
+##### usage
+
+Type: `object`
+Default: null
+
+Usage data for advanced optimisations (read more in [CSSO documentation](https://github.com/css/csso#usage-data)).
+
 ## Contributing
 
 Pull requests are welcome. If you add functionality, then please add unit tests

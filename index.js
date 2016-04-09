@@ -77,15 +77,6 @@ module.exports = function (options) {
         try {
             var result = csso.minify(source, cssoOptions);
 
-            // NOTE: it's temporary, since csso will always return an object in future,
-            // but currenly returns a string when no source map generation set up
-            if (typeof result === 'string') {
-                result = {
-                    css: result,
-                    map: null
-                };
-            }
-
             if (result.map) {
                 applySourceMap(file, result.map.toJSON());
             } else {
