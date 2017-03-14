@@ -1,3 +1,7 @@
+# 3.0.0
+
+* Update CSSO to 3.0.0
+
 # 2.0.0
 
 * Update CSSO to 2.0.0 (thanks to @lahmatiy).
