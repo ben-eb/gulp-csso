@@ -1,10 +1,10 @@
 # 3.0.0
 
-* Update CSSO to 3.0.0 (thanks to @lahmatiy).
+* Update CSSO to [3.0.0](https://github.com/css/csso/releases/tag/v3.0.0) (thanks to @lahmatiy).
 
 # 2.0.0
 
-* Update CSSO to 2.0.0 (thanks to @lahmatiy).
+* Update CSSO to [2.0.0](https://github.com/css/csso/releases/tag/v2.0.0) (thanks to @lahmatiy).
 
 # 1.1.0
 
@@ -12,7 +12,7 @@
 
 # 1.0.1
 
-* Bump CSSO to 1.4.0 (thanks to @lahmatiy).
+* Bump CSSO to [1.4.0](https://github.com/css/csso/releases/tag/v1.4.0) (thanks to @lahmatiy).
 
 # 1.0.0
 
