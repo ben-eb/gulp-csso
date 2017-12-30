@@ -1,7 +1,7 @@
 'use strict';
 
 var csso        = require('csso'),
-    gutil       = require('gulp-util'),
+    PluginError = require('plugin-error'),
     Transform   = require('stream').Transform,
     applySourceMap = require('vinyl-sourcemaps-apply');
 
@@ -42,7 +42,7 @@ module.exports = function (options) {
                 error = processParseError(source, inputFile, error.parseError, error.message);
             }
 
-            cb(new gutil.PluginError('gulp-csso', error));
+            cb(new PluginError('gulp-csso', error));
         }
 
         if (file.isNull()) {

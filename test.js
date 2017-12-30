@@ -3,7 +3,7 @@
 var csso    = require('./'),
     test    = require('tape'),
     Stream  = require('stream'),
-    gutil   = require('gulp-util'),
+    Vinyl   = require('vinyl'),
     fs      = require('fs'),
 
     basestyle  = 'h1 { color: yellow; } \n h1 { font-size: 2em; }',
@@ -20,7 +20,7 @@ function readSourceMapTestFile(ext) {
 }
 
 function fixture (contents) {
-    return new gutil.File({
+    return new Vinyl({
         contents: contents,
         cwd: __dirname,
         base: __dirname,
@@ -29,7 +29,7 @@ function fixture (contents) {
 }
 
 function sourceMapFixture (contents, sourceMap) {
-    var file = new gutil.File({
+    var file = new Vinyl({
         contents: new Buffer(contents),
         cwd: __dirname,
         base: __dirname,
@@ -106,7 +106,7 @@ test('should throw an error in stream mode', function (t) {
 
     var stream = csso();
 
-    var file = fixture(new Stream());
+    var file = fixture(new Stream.Readable());
 
     var write = function () {
         stream.write(file);

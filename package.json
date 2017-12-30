@@ -24,12 +24,13 @@
   ],
   "dependencies": {
     "csso": "^3.0.0",
-    "gulp-util": "^3.0.6",
+    "plugin-error": "^0.1.2",
     "vinyl-sourcemaps-apply": "^0.2.1"
   },
   "devDependencies": {
     "tap-spec": "^4.1.0",
-    "tape": "^4.2.1"
+    "tape": "^4.2.1",
+    "vinyl": "^2.1.0"
   },
   "main": "index.js"
 }
