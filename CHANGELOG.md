@@ -1,3 +1,7 @@
+# 3.0.1
+
+* Drop dependency on deprecated `gulp-util` (#30, thanks to @TheDancingCode)
+
 # 3.0.0
 
 * Update CSSO to [3.0.0](https://github.com/css/csso/releases/tag/v3.0.0) (thanks to @lahmatiy).
