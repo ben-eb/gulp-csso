@@ -4,6 +4,7 @@ const csso = require('csso');
 const PluginError = require('plugin-error');
 const { Transform } = require('stream');
 const applySourceMap = require('vinyl-sourcemaps-apply');
+const PLUGIN_NAME = 'gulp-csso';
 
 module.exports = function (options) {
     const stream = new Transform({ objectMode: true });
@@ -14,7 +15,7 @@ module.exports = function (options) {
         }
 
         if (file.isStream()) {
-            return cb(new PluginError('gulp-csso', 'Streaming not supported'));
+            this.emit('error', new PluginError(PLUGIN_NAME, 'Streaming not supported'));
         }
 
         if (options === undefined || typeof options === 'boolean') {
@@ -44,7 +45,7 @@ module.exports = function (options) {
             file.contents = new Buffer(result.css);
             cb(null, file);
         } catch(error) {
-            cb(new PluginError('gulp-csso', error));
+            this.emit('error', new PluginError(PLUGIN_NAME, error));
         }
     };
 
