@@ -1,4 +1,4 @@
-# [gulp](https://github.com/gulpjs/gulp)-csso [![Build Status](https://travis-ci.org/ben-eb/gulp-csso.svg?branch=master)](https://travis-ci.org/ben-eb/gulp-csso) [![NPM version](https://badge.fury.io/js/gulp-csso.svg)](http://badge.fury.io/js/gulp-csso) [![Dependency Status](https://gemnasium.com/ben-eb/gulp-csso.svg)](https://gemnasium.com/ben-eb/gulp-csso)
+# [gulp](https://github.com/gulpjs/gulp)-csso [![Build Status](https://travis-ci.org/ben-eb/gulp-csso.svg?branch=master)](https://travis-ci.org/ben-eb/gulp-csso) [![NPM version](https://badge.fury.io/js/gulp-csso.svg)](http://badge.fury.io/js/gulp-csso) [![Dependency Status](https://img.shields.io/david/ben-eb/gulp-csso.svg)](https://david-dm.org/ben-eb/gulp-csso)
 
 > Minify CSS with [CSSO](https://www.npmjs.com/package/csso).
 
