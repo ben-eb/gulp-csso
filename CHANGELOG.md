@@ -1,4 +1,4 @@
-# next
+# 4.0.0 (November 14, 2019)
 
 * Update CSSO to [^4.0.0](https://github.com/css/csso/releases/tag/v4.0.0)
 * Plugin never produce a parse error, but drops bad parts of CSS instead
