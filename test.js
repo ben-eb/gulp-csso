@@ -1,19 +1,19 @@
 'use strict';
 
-var csso    = require('./'),
-    test    = require('tape'),
-    Stream  = require('stream'),
-    Vinyl   = require('vinyl'),
-    fs      = require('fs'),
+const csso    = require('./');
+const test    = require('tape');
+const Stream  = require('stream');
+const Vinyl   = require('vinyl');
+const fs      = require('fs');
 
-    basestyle  = 'h1 { color: yellow; } \n h1 { font-size: 2em; }',
-    optimalmin = 'h1{color:#ff0;font-size:2em}',
-    nonoptimal = 'h1{color:#ff0}h1{font-size:2em}',
-    sourceMapCss      = readSourceMapTestFile('css'),
-    sourceMapCssMin   = readSourceMapTestFile('min.css'),
-    sourceMap         = readSourceMapTestFile('map'),
-    sourceMapInitial  = readSourceMapTestFile('initial.map'),
-    sourceMapContinue = readSourceMapTestFile('continue.map');
+const basestyle  = 'h1 { color: yellow; } \n h1 { font-size: 2em; }';
+const optimalmin = 'h1{color:#ff0;font-size:2em}';
+const nonoptimal = 'h1{color:#ff0}h1{font-size:2em}';
+const sourceMapCss      = readSourceMapTestFile('css');
+const sourceMapCssMin   = readSourceMapTestFile('min.css');
+const sourceMap         = readSourceMapTestFile('map');
+const sourceMapInitial  = readSourceMapTestFile('initial.map');
+const sourceMapContinue = readSourceMapTestFile('continue.map');
 
 function readSourceMapTestFile(ext) {
     return fs.readFileSync(__dirname + '/test/source-map.' + ext, 'utf8').trimRight();
@@ -29,7 +29,7 @@ function fixture (contents) {
 }
 
 function sourceMapFixture (contents, sourceMap) {
-    var file = new Vinyl({
+    const file = new Vinyl({
         contents: new Buffer(contents),
         cwd: __dirname,
         base: __dirname,
@@ -42,7 +42,7 @@ function sourceMapFixture (contents, sourceMap) {
 test('should minify css with csso, performing structural optimisation', function (t) {
     t.plan(1);
 
-    var stream = csso();
+    const stream = csso();
 
     stream.on('data', function (file) {
         t.equal(String(file.contents), optimalmin);
@@ -54,7 +54,7 @@ test('should minify css with csso, performing structural optimisation', function
 test('should minify css with csso, performing structural optimisation when options is `false` (backward compatibility)', function (t) {
     t.plan(1);
 
-    var stream = csso(false);
+    const stream = csso(false);
 
     stream.on('data', function (file) {
         t.equal(String(file.contents), optimalmin);
@@ -66,7 +66,7 @@ test('should minify css with csso, performing structural optimisation when optio
 test('should minify css with csso, with no structural optimisation', function (t) {
     t.plan(1);
 
-    var stream = csso({ restructure: false });
+    const stream = csso({ restructure: false });
 
     stream.on('data', function (file) {
         t.equal(String(file.contents), nonoptimal);
@@ -78,7 +78,7 @@ test('should minify css with csso, with no structural optimisation', function (t
 test('should minify css with csso, with no structural optimisation when options is `true` (backward compatibility)', function (t) {
     t.plan(1);
 
-    var stream = csso(true);
+    const stream = csso(true);
 
     stream.on('data', function (file) {
         t.equal(String(file.contents), nonoptimal);
@@ -90,13 +90,13 @@ test('should minify css with csso, with no structural optimisation when options 
 test('should let null files pass through', function (t) {
     t.plan(1);
 
-    var stream = csso();
+    const stream = csso();
 
     stream.on('data', function (data) {
         t.equal(data.contents, null, 'should not transform null in any way');
     });
 
-    var file = fixture(null);
+    const file = fixture(null);
 
     stream.write(file);
 });
@@ -104,11 +104,11 @@ test('should let null files pass through', function (t) {
 test('should throw an error in stream mode', function (t) {
     t.plan(1);
 
-    var stream = csso();
+    const stream = csso();
 
-    var file = fixture(new Stream.Readable());
+    const file = fixture(new Stream.Readable());
 
-    var write = function () {
+    const write = function () {
         stream.write(file);
         file.contents.write(basestyle);
         file.contents.end();
@@ -121,7 +121,22 @@ test('should throw an error in stream mode', function (t) {
 test('should generate source map when sourceMap is true', function (t) {
     t.plan(2);
 
-    var stream = csso({ sourceMap: true });
+    const stream = csso({ sourceMap: true });
+
+    stream.on('data', function (file) {
+        t.equal(String(file.contents), sourceMapCssMin);
+        t.deepEqual(file.sourceMap, JSON.parse(sourceMapInitial));
+    });
+
+    stream.write(sourceMapFixture(
+        sourceMapCss
+    ));
+});
+
+test('should not override filename by options', function (t) {
+    t.plan(2);
+
+    const stream = csso({ sourceMap: true, filename: 'foobar' });
 
     stream.on('data', function (file) {
         t.equal(String(file.contents), sourceMapCssMin);
@@ -136,7 +151,7 @@ test('should generate source map when sourceMap is true', function (t) {
 test('should generate source map when file has source map', function (t) {
     t.plan(2);
 
-    var stream = csso();
+    const stream = csso();
 
     stream.on('data', function (file) {
         t.equal(String(file.contents), sourceMapCssMin);
@@ -152,7 +167,7 @@ test('should generate source map when file has source map', function (t) {
 test('should not generate source map when sourceMap setting is false', function (t) {
     t.plan(2);
 
-    var stream = csso({ sourceMap: false });
+    const stream = csso({ sourceMap: false });
 
     stream.on('data', function (file) {
         t.equal(String(file.contents), sourceMapCssMin);

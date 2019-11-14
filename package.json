@@ -32,5 +32,8 @@
     "tape": "^4.2.1",
     "vinyl": "^2.1.0"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  }
 }
