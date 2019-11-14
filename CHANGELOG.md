@@ -1,3 +1,7 @@
+# 4.0.1 (November 14, 2019)
+
+* Fix error handling
+
 # 4.0.0 (November 14, 2019)
 
 * Update CSSO to [^4.0.0](https://github.com/css/csso/releases/tag/v4.0.0)
